@@ -29,4 +29,7 @@ class DemoViewController: UIViewController {
         self.loader.startAnimating()
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }
