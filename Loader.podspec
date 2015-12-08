@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "Loader"
+  s.name         = "SwitchLoader"
   s.version      = "0.0.1"
   s.summary      = "Amazing animated switch activity indicator written in swift"
 
