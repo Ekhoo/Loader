@@ -1,8 +1,8 @@
 ![Loader](https://github.com/Ekhoo/Loader/blob/master/Source/Asset/Loader.png)
 
-[![Version](https://img.shields.io/cocoapods/v/Loader.svg?style=flat)](http://cocoapods.org/pods/Loader)
-[![License](https://img.shields.io/cocoapods/l/Loader.svg?style=flat)](http://cocoapods.org/pods/Loader)
-[![Platform](https://img.shields.io/cocoapods/p/Loader.svg?style=flat)](http://cocoapods.org/pods/Loader)
+[![Version](https://img.shields.io/cocoapods/v/SwitchLoader.svg?style=flat)](http://cocoapods.org/pods/SwitchLoader)
+[![License](https://img.shields.io/cocoapods/l/SwitchLoader.svg?style=flat)](http://cocoapods.org/pods/SwitchLoader)
+[![Platform](https://img.shields.io/cocoapods/p/SwitchLoader.svg?style=flat)](http://cocoapods.org/pods/SwitchLoader)
 ![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)
 ![](https://img.shields.io/badge/Carthage-unavailable-red.svg?style=flat)
 ![](https://img.shields.io/badge/Swift 2-compatible-4BC51D.svg?style=flat-square)
@@ -19,7 +19,7 @@ Loader is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Loader", '~> 0.0.1'
+pod "SwitchLoader", '~> 0.0.1'
 ```
 
 # Usage
