@@ -15,7 +15,7 @@ class DemoViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        self.view.backgroundColor = UIColor(red: 255.0 / 255.0, green: 195.0 / 255.0, blue: 117.0 / 255.0, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 175.0 / 255.0, green: 85.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
         
         self.loader = Loader(frame: CGRectMake(0.0, 0.0, 80.0, 40.0))
         loader.center = self.view.center
@@ -29,7 +29,7 @@ class DemoViewController: UIViewController {
         self.loader.startAnimating()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }

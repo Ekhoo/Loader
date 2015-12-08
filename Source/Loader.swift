@@ -31,7 +31,7 @@ public class Loader: UIView {
     
     override init(frame: CGRect) {
         self.loaderColor = UIColor.whiteColor()
-        self.switchColor = UIColor(red: 255.0 / 255.0, green: 195.0 / 255.0, blue: 117.0 / 255.0, alpha: 1.0)
+        self.switchColor = UIColor(red: 175.0 / 255.0, green: 85.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
         
         super.init(frame: frame)
         
