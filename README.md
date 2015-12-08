@@ -38,8 +38,8 @@ func myFunc() {
 public func startAnimating() // Animate the switch activity indicator
 public func stoptAnimating() // Stop Animating the switch activity indicator
 
-let loaderColor: UIColor // The background color
-let switchColor: UIColor // The animated switch color
+public var loaderColor: UIColor // The background color
+public var switchColor: UIColor // The animated switch color
 ```
 
 # Author
