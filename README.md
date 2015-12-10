@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/SwitchLoader.svg?style=flat)](http://cocoapods.org/pods/SwitchLoader)
 [![Platform](https://img.shields.io/cocoapods/p/SwitchLoader.svg?style=flat)](http://cocoapods.org/pods/SwitchLoader)
 ![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)
-![](https://img.shields.io/badge/Carthage-unavailable-red.svg?style=flat)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![](https://img.shields.io/badge/Swift 2-compatible-4BC51D.svg?style=flat-square)
 
 Simple and light weight animated switch activity indicator. 
