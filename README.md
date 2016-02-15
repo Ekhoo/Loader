@@ -14,7 +14,7 @@ Simple and light weight animated switch activity indicator.
 ![Loader](https://github.com/Ekhoo/Loader/blob/master/Source/Asset/Loader.gif)
 
 # Installation
-## Cocoapods
+## CocoaPods
 Loader is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
