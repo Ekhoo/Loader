@@ -90,7 +90,7 @@ public class Loader: UIView {
     }
     
     public func startAnimating() {
-        self.animationTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: "animateLoader", userInfo: nil, repeats: true)
+        self.animationTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(Loader.animateLoader), userInfo: nil, repeats: true)
     }
     
     public func stopAnimating() {
