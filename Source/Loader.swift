@@ -14,7 +14,7 @@ public class Loader: UIView {
 
     private var switchView: UIView?
     private var switchAnimationSide: Bool = false
-    private var animationTimer: NSTimer?
+    private var animationTimer: Timer?
     
     var loaderColor: UIColor {
         didSet {
@@ -30,17 +30,17 @@ public class Loader: UIView {
     }
     
     override init(frame: CGRect) {
-        self.loaderColor = UIColor.whiteColor()
-        self.switchColor = UIColor(red: 175.0 / 255.0, green: 85.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
+        self.loaderColor = UIColor.white
+        self.switchColor = UIColor(red: 255.0 / 255.0, green: 195.0 / 255.0, blue: 117.0 / 255.0, alpha: 1.0)
         
         super.init(frame: frame)
         
-        self.switchView = UIView(frame: CGRectMake(kInset, kInset, frame.size.height - 2 * kInset, frame.size.height - 2 * kInset))
+        self.switchView = UIView(frame: CGRect(x: kInset, y: kInset, width: frame.size.height - 2 * kInset, height: frame.size.height - 2 * kInset))
         self.switchView!.backgroundColor = self.switchColor
         self.switchView!.layer.cornerRadius = round(self.switchView!.frame.size.width / 2)
         self.switchView!.layer.masksToBounds = true
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
         self.addSubview(self.switchView!)
     }
@@ -54,24 +54,24 @@ public class Loader: UIView {
             return;
         }
         
-        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: { () -> Void in
             let frame: CGRect = self.bounds
             
             if self.switchView!.frame.origin.x > kInset {
-                self.switchView!.frame = CGRectMake(kInset, self.switchView!.frame.origin.y, frame.width - 2 * kInset, self.switchView!.frame.height)
+                self.switchView!.frame = CGRect(x: kInset, y: self.switchView!.frame.origin.y, width: frame.width - 2 * kInset, height: self.switchView!.frame.height)
             } else {
-                self.switchView!.frame = CGRectMake(self.switchView!.frame.origin.x, self.switchView!.frame.origin.y, frame.width - 2 * kInset, self.switchView!.frame.height)
+                self.switchView!.frame = CGRect(x: self.switchView!.frame.origin.x, y: self.switchView!.frame.origin.y, width: frame.width - 2 * kInset, height: self.switchView!.frame.height)
             }
             
             self.switchView!.setNeedsDisplay()
         }) { (finished) -> Void in
-            UIView.animateWithDuration(0.30, animations: { () -> Void in
+            UIView.animate(withDuration: 0.30, animations: { () -> Void in
                 let frame: CGRect = self.bounds
 
                 if self.switchAnimationSide {
-                    self.switchView!.frame = CGRectMake(kInset, self.switchView!.frame.origin.y, self.switchView!.frame.size.height, self.switchView!.frame.height)
+                    self.switchView!.frame = CGRect(x: kInset, y: self.switchView!.frame.origin.y, width: self.switchView!.frame.size.height, height: self.switchView!.frame.height)
                 } else {
-                    self.switchView!.frame = CGRectMake(frame.size.width - self.switchView!.frame.height - kInset, self.switchView!.frame.origin.y, self.switchView!.frame.size.height, self.switchView!.frame.height)
+                    self.switchView!.frame = CGRect(x: frame.size.width - self.switchView!.frame.height - kInset, y: self.switchView!.frame.origin.y, width: self.switchView!.frame.size.height, height: self.switchView!.frame.height)
                 }
                 
                 self.switchAnimationSide = !self.switchAnimationSide
@@ -82,15 +82,15 @@ public class Loader: UIView {
     }
     
     @objc private func animateLoader() {
-        UIView.animateWithDuration(0.4) { () -> Void in
-            self.transform = CGAffineTransformRotate(self.transform, CGFloat(M_PI_2));
+        UIView.animate(withDuration: 0.4) { () -> Void in
+            self.transform = self.transform.rotated(by: CGFloat(M_PI_2));
         }
         
         animateSwitch()
     }
     
     public func startAnimating() {
-        self.animationTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "animateLoader", userInfo: nil, repeats: true)
+        self.animationTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: "animateLoader", userInfo: nil, repeats: true)
     }
     
     public func stopAnimating() {
@@ -101,8 +101,8 @@ public class Loader: UIView {
         }
     }
     
-    override public func drawRect(rect: CGRect) {
-        let rectanglePath = UIBezierPath(roundedRect: CGRectMake(0.0, 0.0, rect.size.width, rect.size.height), cornerRadius: round(rect.size.width / 2.0))
+    override public func draw(_ rect: CGRect) {
+        let rectanglePath = UIBezierPath(roundedRect: CGRect(x: 0.0, y: 0.0, width: rect.size.width, height: rect.size.height), cornerRadius: round(rect.size.width / 2.0))
         self.loaderColor.setFill()
         rectanglePath.fill()
     }
