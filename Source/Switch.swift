@@ -14,15 +14,15 @@ class Switch: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawRect(rect: CGRect) {
-        let rectanglePath = UIBezierPath(roundedRect: CGRectMake(0.0, 0.0, rect.size.width, rect.size.height), cornerRadius: rect.size.width / 2.0)
+    override func draw(_ rect: CGRect) {
+        let rectanglePath = UIBezierPath(roundedRect: CGRect(x: 0.0, y: 0.0, width: rect.size.width, height: rect.size.height), cornerRadius: rect.size.width / 2.0)
         self.switchColor.setFill()
         rectanglePath.fill()
     }
